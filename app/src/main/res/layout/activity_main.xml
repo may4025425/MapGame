@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -61,11 +62,50 @@
         app:layout_constraintStart_toEndOf="@+id/button_left" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="65"
-        android:layout_height="65"
-        app:srcCompat="@drawable/up"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="82dp" />
+        android:id="@+id/image_down"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/circle_background"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_up"
+        app:srcCompat="@drawable/down" />
+
+    <ImageView
+        android:id="@+id/image_left"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_background"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/image_down"
+        app:layout_constraintEnd_toStartOf="@+id/image_down"
+        app:srcCompat="@drawable/left" />
+
+    <ImageView
+        android:id="@+id/image_right"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/circle_background"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/image_down"
+        app:layout_constraintStart_toEndOf="@+id/image_down"
+        app:srcCompat="@drawable/right" />
+
+    <ImageView
+        android:id="@+id/image_up"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_background"
+        android:padding="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/image_right"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/up" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
