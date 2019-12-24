@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private GameView gameView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.image_up).setOnClickListener(this);
         findViewById(R.id.image_left).setOnClickListener(this);
         findViewById(R.id.image_right).setOnClickListener(this);
+        gameView = findViewById(R.id.game);
+
 
     }
 //
@@ -45,15 +49,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.image_up:
                 Log.d("MainActivity","OnClick:up");
+                gameView.setPosY(gameView.getPosY()-50);
+                gameView.invalidate();
                 break;
             case R.id.image_down:
                 Log.d("MainActivity","OnClick:down");
+                gameView.setPosY(gameView.getPosY()+50);
+                gameView.invalidate();
                 break;
             case R.id.image_left:
                 Log.d("MainActivity","OnClick:left");
+                gameView.setPosX(gameView.getPosX()-50);
+                gameView.invalidate();
                 break;
             case R.id.image_right:
                 Log.d("MainActivity","OnClick:right");
+                gameView.setPosX(gameView.getPosX()+50);
+                gameView.invalidate();
                 break;
         }
 
